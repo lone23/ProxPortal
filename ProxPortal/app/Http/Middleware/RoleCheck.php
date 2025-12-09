@@ -16,11 +16,11 @@ class RoleCheck
      */
     public function handle(Request $request, Closure $next, $role = null): Response
     {
-        if (!Auth::check()) {
-            return redirect('/login');
+        if (! Auth::check()) {
+            return redirect()->route('login');
         }
 
-        $role = Auth::user()->role;
+        $role = Auth::user()->type;
 
         if ($role === 'admin') {
             return redirect()->route('admin.dashboard');
@@ -30,8 +30,6 @@ class RoleCheck
             return redirect()->route('user.dashboard');
         }
 
-
         abort(403, 'Ruolo non riconosciuto.');
-
     }
 }
