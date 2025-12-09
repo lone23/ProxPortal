@@ -1,10 +1,10 @@
-@extends('auth')
+@extends('auth.auth')
 
 @section('content')
-    <div class="mb-6">
+    <div class="mb-8 space-y-1">
         <p class="text-sm text-slate-500">Bentornato</p>
         <h2 class="text-2xl font-bold text-slate-900">Accedi al tuo account</h2>
-        <p class="text-sm text-slate-500">Entra come amministratore o utente per raggiungere il tuo cruscotto.</p>
+        <p class="text-sm text-slate-500">Entra come amministratore o utente per raggiungere il tuo cruscotto personale.</p>
     </div>
 
     @if ($errors->any())
@@ -24,14 +24,14 @@
             <label class="block mb-1 font-semibold text-slate-800">Email</label>
             <input type="email" name="email" value="{{ old('email') }}"
                    class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                   required>
+                   placeholder="nome@azienda.it" required>
         </div>
 
         <div>
             <label class="block mb-1 font-semibold text-slate-800">Password</label>
             <input type="password" name="password"
                    class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                   required>
+                   placeholder="••••••••" required>
         </div>
 
         <div class="flex items-center justify-between text-sm">
