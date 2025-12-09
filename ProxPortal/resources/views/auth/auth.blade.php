@@ -21,7 +21,6 @@
                 <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">Sicurezza con sessioni protette</div>
                 <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-100">Esperienza semplice e pulita</div>
             </div>
-        </div>
 
         <div class="bg-white shadow-xl rounded-3xl p-10 border border-slate-100 space-y-8">
             <div class="flex items-center justify-between">
@@ -36,7 +35,5 @@
             </div>
 
             @yield('content')
-        </div>
-    </div>
 </body>
 </html>
