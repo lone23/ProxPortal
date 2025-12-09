@@ -1,7 +1,7 @@
-@extends('auth')
+@extends('auth.auth')
 
 @section('content')
-    <div class="mb-6">
+    <div class="mb-8 space-y-1">
         <p class="text-sm text-slate-500">Nuovo utente</p>
         <h2 class="text-2xl font-bold text-slate-900">Crea il tuo account</h2>
         <p class="text-sm text-slate-500">Scegli se accedere come amministratore o utente standard.</p>
@@ -20,18 +20,19 @@
     <form method="POST" action="{{ route('register.perform') }}" class="space-y-4">
         @csrf
 
-        <div>
-            <label class="block mb-1 font-semibold text-slate-800">Nome e cognome</label>
-            <input type="text" name="name" value="{{ old('name') }}"
-                   class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                   required>
-        </div>
-
-        <div>
-            <label class="block mb-1 font-semibold text-slate-800">Email</label>
-            <input type="email" name="email" value="{{ old('email') }}"
-                   class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                   required>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+                <label class="block mb-1 font-semibold text-slate-800">Nome e cognome</label>
+                <input type="text" name="name" value="{{ old('name') }}"
+                       class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                       placeholder="Mario Rossi" required>
+            </div>
+            <div>
+                <label class="block mb-1 font-semibold text-slate-800">Email</label>
+                <input type="email" name="email" value="{{ old('email') }}"
+                       class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                       placeholder="mario.rossi@mail.it" required>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -39,13 +40,13 @@
                 <label class="block mb-1 font-semibold text-slate-800">Password</label>
                 <input type="password" name="password"
                        class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                       required>
+                       placeholder="••••••••" required>
             </div>
             <div>
                 <label class="block mb-1 font-semibold text-slate-800">Conferma password</label>
                 <input type="password" name="password_confirmation"
                        class="w-full p-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                       required>
+                       placeholder="••••••••" required>
             </div>
         </div>
 
