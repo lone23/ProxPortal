@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/corsinvest/cv4pve-api-php" />
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/ProxPortal/vendor/doctrine/lexer" />

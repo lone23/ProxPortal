@@ -130,6 +130,7 @@
       <path value="$PROJECT_DIR$/ProxPortal/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/ProxPortal/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/ProxPortal/vendor/composer" />
+      <path value="$PROJECT_DIR$/ProxPortal/vendor/corsinvest/cv4pve-api-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
