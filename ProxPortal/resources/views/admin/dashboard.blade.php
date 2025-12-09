@@ -9,22 +9,9 @@
         <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold">Admin</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-            <p class="text-sm text-slate-500">Utenti attivi</p>
-            <p class="text-3xl font-bold text-slate-900">24</p>
-            <p class="text-xs text-green-600 mt-1">+4 questa settimana</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-            <p class="text-sm text-slate-500">Ticket aperti</p>
-            <p class="text-3xl font-bold text-slate-900">5</p>
-            <p class="text-xs text-slate-500 mt-1">Controlla le priorità</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-            <p class="text-sm text-slate-500">Nuove richieste</p>
-            <p class="text-3xl font-bold text-slate-900">12</p>
-            <p class="text-xs text-slate-500 mt-1">Ultimo aggiornamento 10 min fa</p>
-        </div>
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 text-center text-slate-600">
+        <p class="text-lg font-semibold text-slate-900">Contenuti in arrivo</p>
+        <p class="mt-2 text-sm">La dashboard admin sarà popolata con dati reali quando disponibili.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
