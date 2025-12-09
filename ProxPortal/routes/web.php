@@ -3,30 +3,37 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserDashboardController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-
 
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])
-    ->name('login.perform');
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'store'])->name('register.perform');
+});
 
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/register', [AuthController::class, 'register']);
+    Route::get('/dashboard', function () {
+        $user = Auth::user();
 
-Route::get('/dashboard', function () {
-    return "Redirect…";
-})->middleware('rolecheck');
+        if ($user->type === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
 
-Route::get('/admin/dashboard',
-    [AdminDashboardController::class, 'index']
-)->name('admin.dashboard')->middleware('auth');
+        return redirect()->route('user.dashboard');
+    })->name('dashboard');
 
-Route::get('/user/dashboard',
-    [UserDashboardController::class, 'index']
-)->name('user.dashboard')->middleware('auth');
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
+        ->name('admin.dashboard');
+
+    Route::get('/user/dashboard', [UserDashboardController::class, 'index'])
+        ->name('user.dashboard');
+});
